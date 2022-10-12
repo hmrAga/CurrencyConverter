@@ -121,7 +121,7 @@ public class CurrencyConverter extends JFrame {
     }
 
     private void jButton1ActionPerformed(ActionEvent evt) {
-        JOptionPane.showMessageDialog(this, "Enter the amount you want to convert and select the currencies. Remember to write down the amount in the form: 123.45.");
+        JOptionPane.showMessageDialog(this, "Enter the amount you want to convert and select the currencies.");
     }
 
     private void txtAmountActionPerformed(ActionEvent evt) {
