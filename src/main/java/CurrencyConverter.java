@@ -43,7 +43,7 @@ public class CurrencyConverter extends JFrame {
         jLabel3.setFont(new Font("Tahoma", Font.BOLD, 14));
         jLabel3.setText("To");
 
-        convert.setBackground(new Color(255, 204, 102));
+        convert.setBackground(new Color(72, 151, 54, 235));
         convert.setText("Convert");
         convert.addActionListener(this::ConvertActionPerformed);
 
