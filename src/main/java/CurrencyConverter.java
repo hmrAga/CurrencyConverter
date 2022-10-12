@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -128,56 +129,56 @@ public class CurrencyConverter extends JFrame {
     }
 
     private void ConvertActionPerformed(ActionEvent evt) {
-
+        int precision = 2;
         BigDecimal convert;
         BigDecimal amount = BigDecimal.valueOf(Double.parseDouble(txtAmount.getText()));
 
         if(Objects.equals(Objects.requireNonNull(txtFrom.getSelectedItem()).toString(), "USD") && Objects.equals(Objects.requireNonNull(txtTo.getSelectedItem()).toString(), "PLN")){
-            convert = amount.multiply(BigDecimal.valueOf(5.04));
+            convert = (amount.multiply(BigDecimal.valueOf(5.04))).setScale(precision, RoundingMode.HALF_UP);
             JOptionPane.showMessageDialog(this, "The amount is: "+ convert +" PLN");
         }
         else if(Objects.equals(txtFrom.getSelectedItem().toString(), "PLN") && Objects.equals(Objects.requireNonNull(txtTo.getSelectedItem()).toString(), "USD")){
-            convert = amount.multiply(BigDecimal.valueOf(0.2));
+            convert = (amount.multiply(BigDecimal.valueOf(0.2))).setScale(precision, RoundingMode.HALF_UP);
             JOptionPane.showMessageDialog(this, "The amount is: "+ convert +" USD");
         }
         else if(Objects.equals(txtFrom.getSelectedItem().toString(), "PLN") && Objects.equals(Objects.requireNonNull(txtTo.getSelectedItem()).toString(), "GBP")){
-            convert = amount.multiply(BigDecimal.valueOf(0.18));
+            convert = (amount.multiply(BigDecimal.valueOf(0.18))).setScale(precision, RoundingMode.HALF_UP);
             JOptionPane.showMessageDialog(this, "The amount is: "+ convert +" GBP");
         }
         else if(Objects.equals(txtFrom.getSelectedItem().toString(), "PLN") && Objects.equals(Objects.requireNonNull(txtTo.getSelectedItem()).toString(), "EUR")){
-            convert = amount.multiply(BigDecimal.valueOf(0.21));
+            convert = (amount.multiply(BigDecimal.valueOf(0.21))).setScale(precision, RoundingMode.HALF_UP);
             JOptionPane.showMessageDialog(this, "The amount is: "+ convert +" EUR");
         }
         else if(Objects.equals(txtFrom.getSelectedItem().toString(), "USD") && Objects.equals(Objects.requireNonNull(txtTo.getSelectedItem()).toString(), "EUR")){
-            convert = amount.multiply(BigDecimal.valueOf(1.03));
+            convert = (amount.multiply(BigDecimal.valueOf(1.03))).setScale(precision, RoundingMode.HALF_UP);
             JOptionPane.showMessageDialog(this, "The amount is: "+ convert +" EUR");
         }
         else if(Objects.equals(txtFrom.getSelectedItem().toString(), "USD") && Objects.equals(Objects.requireNonNull(txtTo.getSelectedItem()).toString(), "GBP")){
-            convert = amount.multiply( BigDecimal.valueOf(0.9));
+            convert = (amount.multiply( BigDecimal.valueOf(0.9))).setScale(precision, RoundingMode.HALF_UP);
             JOptionPane.showMessageDialog(this, "The amount is: "+ convert +" GBP");
         }
         else if(Objects.equals(txtFrom.getSelectedItem().toString(), "EUR") && Objects.equals(Objects.requireNonNull(txtTo.getSelectedItem()).toString(), "USD")){
-            convert = amount.multiply( BigDecimal.valueOf(0.97));
+            convert = (amount.multiply( BigDecimal.valueOf(0.97))).setScale(precision, RoundingMode.HALF_UP);
             JOptionPane.showMessageDialog(this, "The amount is: "+ convert +" USD");
         }
         else if(Objects.equals(txtFrom.getSelectedItem().toString(), "EUR") && Objects.equals(Objects.requireNonNull(txtTo.getSelectedItem()).toString(), "PLN")){
-            convert = amount.multiply( BigDecimal.valueOf(4.87));
+            convert = (amount.multiply( BigDecimal.valueOf(4.87))).setScale(precision, RoundingMode.HALF_UP);
             JOptionPane.showMessageDialog(this, "The amount is: "+ convert +" PLN");
         }
         else if(Objects.equals(txtFrom.getSelectedItem().toString(), "EUR") && Objects.equals(Objects.requireNonNull(txtTo.getSelectedItem()).toString(), "GBP")){
-            convert = amount.multiply( BigDecimal.valueOf(0.98));
+            convert = (amount.multiply( BigDecimal.valueOf(0.98))).setScale(precision, RoundingMode.HALF_UP);
             JOptionPane.showMessageDialog(this, "The amount is: "+ convert +" GBP");
         }
         else if(Objects.equals(txtFrom.getSelectedItem().toString(), "GBP") && Objects.equals(Objects.requireNonNull(txtTo.getSelectedItem()).toString(), "USD")){
-            convert = amount.multiply(BigDecimal.valueOf(1.11));
+            convert = (amount.multiply(BigDecimal.valueOf(1.11))).setScale(precision, RoundingMode.HALF_UP);
             JOptionPane.showMessageDialog(this, "The amount is: "+ convert +" USD");
         }
         else if(Objects.equals(txtFrom.getSelectedItem().toString(), "GBP") && Objects.equals(Objects.requireNonNull(txtTo.getSelectedItem()).toString(), "EUR")){
-            convert = amount.multiply(BigDecimal.valueOf(1.14));
+            convert = (amount.multiply(BigDecimal.valueOf(1.14))).setScale(precision, RoundingMode.HALF_UP);
             JOptionPane.showMessageDialog(this, "The amount is: "+ convert +" EUR");
         }
         else if(Objects.equals(txtFrom.getSelectedItem().toString(), "GBP") && Objects.equals(Objects.requireNonNull(txtTo.getSelectedItem()).toString(), "PLN")){
-            convert = amount.multiply(BigDecimal.valueOf(5.56));
+            convert = (amount.multiply(BigDecimal.valueOf(5.56))).setScale(precision, RoundingMode.HALF_UP);
             JOptionPane.showMessageDialog(this, "The amount is: "+ convert +" PLN");
         }
         else if(Objects.equals(txtFrom.getSelectedItem().toString(), "PLN") && Objects.equals(Objects.requireNonNull(txtTo.getSelectedItem()).toString(), "PLN")){
